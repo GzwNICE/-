@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <style>
+        div{
+            width: 200px;
+            line-height: 200px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 100px 30px;
+            float: left;
+            text-align: center;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>mouseenter()鼠标经过</div>
+    <div>mouseleave()鼠标离开</div>
+    <div>mousedown()鼠标按下</div>
+    <div>mouseup()鼠标松开</div>
+    <div>focus()获得光标</div>
+    <div>blur()失去光标</div>
+    <div>hover()鼠标移入</div> 
+        
+</body>
+<script src="../../jQuery/jquery-3.2.1.min.js"></script>
+<script>
+    $(function(){
+        $('div').mouseenter(function(){
+            $(this).css('background-color','orange');
+        });
+        $('div').mouseleave(function(){
+            $(this).css('background-color','pink');
+        });
+    })
+</script>
+</html>

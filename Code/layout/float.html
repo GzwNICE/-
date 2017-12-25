@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>float布局</title>
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .g {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+        .t,
+        .b {
+            width: 100%;
+            height: 40%;
+            box-sizing: border-box;
+        }
+        .b {
+            margin-top: 20px;
+        }
+        li {
+            float: left;
+            width: 100px;
+            /* height: 100px; */
+            line-height: 100px;
+            border: 1px solid #ccc;
+            margin-right:47px; 
+            text-align: center;
+        }
+        .no {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="g">
+        <ul class="t">
+            <li>1</li>
+            <li>2</li>
+            <li class="no">3</li>
+        </ul>
+        <ul class="b">
+            <li>4</li>
+            <li>5</li>
+            <li class="no">6</li>
+        </ul>
+    </div>
+</body>
+</html>

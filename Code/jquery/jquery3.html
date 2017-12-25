@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery动画</title>
+    <style>
+        .form {
+            width: 800px;
+            margin: 100px auto
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <p>以下实例演示了 fadeIn() fadeOut() 使用了不同参数的效果。</p>
+        <button id="bt1">点击淡入 div 元素。</button>
+        <button id="bt2">点击淡出 div 元素。</button>
+        <br>
+        <br>
+        <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
+        <br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
+        <br>
+        <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+    </div>
+</body>
+<script src="../../jQuery/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+        $('#bt1').click(function () {
+            $('#div1').fadeIn();
+            $('#div2').fadeIn('slow');
+            $('#div3').fadeIn(3000);
+        });
+        $('#bt2').click(function () {
+            $('#div3').fadeOut();
+            $('#div2').fadeOut('slow');
+            $('#div1').fadeOut(3000);
+            // bug  div3会先跳到div2的位置才消失
+        })
+    })
+</script>
+
+</html>

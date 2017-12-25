@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选择器</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      text-align: center;
+      padding-top: 20px;
+      background-color: #ccc;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>hide()隐藏</p>
+    <p>show()显示</p>
+    <!-- <button class="hide">隐藏</button> -->
+    <!-- <button class="show">显示</button> -->
+    <button>点击</button>
+  </div>
+</body>
+<!-- <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<script src="../../jQuery/jquery-3.2.1.min.js"></script>
+<script>
+  //  $(document).ready(function(){
+  //   $("p").click(function(){
+  //     $(this).hide();
+  //   });
+  // });
+  $(function () {
+    // $(".hide").click(function () {
+    //   $('p').hide(1000);
+    // });
+    // $(".show").click(function () {
+    //   $('p').show(2000);
+    // });
+    $("button").click(function () {
+      $("p").toggle(1000);
+    });
+  });
+</script>
+
+</html>

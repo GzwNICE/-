@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			div {
+				padding: 50px;
+				
+			}
+			#box {
+				background-color:red;
+				margin-left: 100px;
+				width: 500px;
+			}
+			#box2 {
+				background-color: blue;
+				width: 200px;
+			}			
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			//mouseenter  事件    只有在鼠标指针穿过被选元素时 才会触发   另外 没有冒泡
+			// mouseover  事件  鼠标穿过被选的子元素也会触发该事件     另外有冒泡
+			
+			//mouseleave  事件    只有在鼠标指针穿过被选元素时 才会触发   另外 没有冒泡
+			// mouseout  事件  鼠标穿过被选的子元素也会触发该事件     另外有冒泡
+			
+			$(function(){
+				
+				
+				$("#box").mouseenter(function(){
+					
+					console.log("触发了box的移上事件");
+					
+				})
+				$("#box").mouseleave(function(){
+					
+					console.log("触发了box的移出事件");
+					
+				})
+			})
+			// 触发了box的移上事件 ==>"触发了box的移出事件==>触发了box的移上事件(冒泡)==》触发了box的移出事件（冒泡）
+			// ==>触发了box的移上事件==>触发了box的移出事件
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box2"></div>
+		</div>
+	</body>
+</html>

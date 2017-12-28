@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		一    简单的事件绑定方式
+		
+			$().click(function(){})
+			$().mouseover(function(){})
+			
+			// 缺点： 不能同时绑定多个事件
+			
+			// 解绑
+			$().off("click")
+			
+		二  bind绑定方式 
+			$().bind("事件类型",function(){})
+			$().bind("click",function(){})
+			可以绑定多个事件
+			$().bind("click mouseover mouseout",function(){})
+			
+			多个事件做不同的事件
+			$().bind({
+				"mouseover":function(){}
+				"mouseout":function(){}
+			})
+			
+			// 可以传入数据
+			$().bind("事件类型",[可选参数 可以写需要传入的数据]，function(){})
+			
+			$().bind({
+				"mouseover":function(){}
+				"mouseout":function(){}
+			},[可选参数 可以写需要传入的数据])
+			
+			缺点： 不可以事件委托
+			
+			$().unbind("事件类型")
+			
+		三  delegate
+			$().delegate("需要被委托的子元素","事件类型",[可选参数 可以写需要传入的数据]，function(){})
+			
+			$().delegate("a","click mouseout",{name:"zs",age:25},function(){})
+			
+			
+			$().delegate("",{
+				"mouseover":function(){},
+				"click":function(){}
+			},[可选参数 可以写需要传入的数据])
+			
+			// 解绑
+			$().undelegate("事件类型")
+			注意： 如果没有委托里面的子元素  为空"", 相当于直接出发父元素事件 undelegate无法解绑
+			
+		四 推荐 以后都使用这种方式 on的绑定方式
+			
+			$().on("事件类型",function(){})
+			$().on("click",function(){
+				
+			})
+			
+			
+			$().on("事件类型","可选参数 需要被委托的子元素",[可选参数 可以写需要传入的数据],function(){})
+			$().on("click","a",{},function(e){
+				e.data
+			})
+			
+			
+			$().on({
+				"mouseover":function(){},
+				"mouseout":function(){}
+			},"可选参数 需要被委托的子元素",[可选参数 可以写需要传入的数据])
+			
+			$().off() // 直接不加参数  将该元素的所有事件全部取消  如果加上特定事件  取消特定事件
+	</body>
+</html>

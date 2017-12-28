@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				display: none;
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				margin-bottom: 10px;
+			}
+		</style>
+		<!-- 第一步 先引入 jQuery包-->
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+//			// 第二步 入口函数  当整个文档全部加载完毕之后才会触发 （类似于window.onload = function(){}）
+//				$(function(){  // 只要DOM渲染树加载完毕之后 就可以触发  （html+css加载就可以触发）
+//					// 写具体的事情
+//				})
+//			// 入口函数还有一种写法:
+//				$(document).ready(function(){
+//					
+//					// 写具体的事情
+//					
+//				})
+				
+			
+			// 2 入口函数
+			$(function(){
+				// 3 具体的功能实现  具体事情
+				$("input:eq(a)").click(function(){
+					$("div").show();
+				});
+				$("input:eq(1)").click(function(){
+					$("div").text("哈哈哈哈"); // text()  相当于原生js里面innerText = "哈哈哈"
+				});
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="单击按钮生成3个div" />
+		<input type="button" value="单击按钮设置div里面的内容" />
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

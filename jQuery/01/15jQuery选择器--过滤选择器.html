@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				// 过滤选择器
+				// 1 :eq()   从0开始   equal等于的意思 简写
+				//$("#box span:eq(0)").css("background-color","#FF0000");
+				$("#box span:eq(1)").css("background-color","#FF0000");
+				
+				// 2 odd even
+				
+//				var aLi = document.getElementsByTagName("li");
+//				for(var i = 0; i < aLi.length; i++) {
+//					
+//					if(i%2==0) {
+//						aLi[i].style.backgroundColor = "red";
+//					}else {
+//						aLi[i].style.backgroundColor = "orange";
+//					}
+//				}
+
+				$("ul li:odd").css("backgroundColor","#ccc");
+				$("ul li:even").css("backgroundColor","#ddd");
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>pppppp</p>
+			<span>11111</span>
+			<strong></strong>
+			<span>2222</span>
+			<a href="#">aaaaa</a>
+			<span>33333</span>
+			<span>44444</span>
+			
+		</div>
+		<ul>
+			<li>这是第1个li的内容</li>
+			<li>这是第2个li的内容</li>
+			<li>这是第3个li的内容</li>
+			<li>这是第4个li的内容</li>
+			<li>这是第5个li的内容</li>
+			<li>这是第6个li的内容</li>
+			<li>这是第7个li的内容</li>
+			<li>这是第8个li的内容</li>
+		</ul>
+	</body>
+</html>

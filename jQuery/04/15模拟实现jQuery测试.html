@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			li {
+				background-color: blue;
+			}		
+		
+		</style>
+		<script src="zQuery.js"></script>
+		<!--/<script src="jquery-1.12.4.js"></script>-->
+		<script type="text/javascript">
+			// 参数  匿名函数   意味着相当于window.onload 的功能
+			ZaG(function(){
+				
+				//console.log(ZaG("#box"));
+//				console.log(ZaG(".box"));
+//				//ZaG(".box").css("backgroundColor","red");
+//				
+//				//ZaG("li").css("backgroundColor","pink");
+//				ZaG("li").css({
+//					"backgroundColor":"purple"
+//				})
+//				console.log(ZaG("li").css("backgroundColor"));
+				
+				ZaG(".box").css({
+					"color":"green",
+					"fontSize":"50px",
+					"backgroundColor":"yellow"
+				})
+				
+				console.log(ZaG("li").css("backgroundColor"));
+			});
+			
+//			$(function(){
+//				
+//				console.log($("#box"));
+//				
+//			})
+			
+			//$().css
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="box">box</div>
+		<ul>
+			<li class="box">111</li>
+			<li>222</li>
+			<li>333</li>
+			<li class="box">444</li>
+		</ul>
+	</body>
+</html>

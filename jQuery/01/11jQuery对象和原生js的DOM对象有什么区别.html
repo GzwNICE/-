@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">div</div>
+		<ul>
+			<li>aaaaa</li>
+			<li>aaaaa</li>
+			<li>aaaaa</li>
+			<li>aaaaa</li>
+		</ul>
+	</body>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		// DOM对象：　用原生js获取的页面中的元素对象 就是DOM 对象
+		var oBox = document.getElementById("box");
+		console.log(oBox);
+		// DOM 对象是不是可以使用DOM对象的方法 去做事情
+		oBox.innerHTML = "改变一下内容";
+		//oBox.html()  
+		// JQ对象 ： 通过$符号获取的页面中元素对象  就是jq对象
+		//$("span")  $("#box")
+		// 只有jq对象才可以使用jq对象的方法
+		$("#box").html("这是jq对象改变的内容") 
+		
+		console.log($("#box")); // 获取的元素 包在$函数里面
+		
+		console.log($("li"));
+		
+		var aLi = document.getElementsByTagName("li");
+		/*for(var i = 0; i < aLi.length; i++) {
+			
+			aLi[i].style.backgroundColor = "red";
+		}*/
+		
+		//aLi[1].style.backgroundColor = "pink";
+		
+		//$("li").css("backgroundColor","blue");
+		$("li:eq(1)").css("backgroundColor","orange");
+	</script>
+</html>

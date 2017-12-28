@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			// jquery中  有好几种 书写事件的方法
+			// 第三种绑定事件的方式  ：delegate事件绑定
+			// 可以同时绑定多个事件 用空格隔开
+			$(function(){
+				
+//				$("#box").delegate(需要被委托的子元素,事件类型,事件处理函数)
+//				$("#box").delegate("span","click",function(){
+//					console.log(123);
+//				})
+//				$("#box").delegate("span","click mouseout",function(){
+//					console.log(123);
+//				})
+				
+//				$("#box").delegate("span",{
+//					"click":function(){
+//						console.log(123);
+//					},
+//					"mouseout":function(){
+//						console.log(456);
+//					},
+//					"mouseover":function(){
+//						console.log("移上了");
+//					}
+//				})
+//				
+				// 也支持传数据
+//				$("#box").delegate("span","click mouseout",{name:"lisi",age:25,job:"fe"},function(e){
+//					console.log(e.data);// 专门用来接收外面传入的数据
+//				})
+
+				$("#box").delegate("span",{
+					"click":function(e){
+//						console.log(123);
+						$(this).css("backgroundColor",e.data[0]);
+					},
+					"mouseout":function(e){
+						//console.log(456);
+						$(this).css("backgroundColor",e.data[1]);
+					},
+					"mouseover":function(e){
+						//console.log("移上了");
+						$(this).css("backgroundColor",e.data[2]);
+					}
+				},["red","blue","orange"]);
+				
+				
+				//简单的事件绑定---bind绑定  ----delegate绑定----最推荐的就是on
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">box
+			<span>span</span>
+			<span>span</span>
+			<p>pppppp</p>
+			<span>span</span>
+		</div>
+	</body>
+</html>

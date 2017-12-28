@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+			}
+		</style>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			// $ 它本质上是一个函数  函数是不是接收参数
+			// $( function(){}      )  如果传入的参数是函数： 意味着表示当文档树加载完毕以后触发一件事情
+			$(function(){});// window.onload = function(){}   DOMcontentLoaded
+			
+			// 如果参数 传入的是字符串  那么它就会进一步判断  到底是什么方式获取元素
+			// 它会智能判断 # . css #ID  .lei   div 
+			//document.getElementById("box")
+			//$("#box")
+			
+			jQuery(function(){
+				
+				console.log($("#box")); // 把页面上的元素获取到 然后包到$函数里面去
+				// text() innerText
+				// html() innerHTML
+				//$("#box").text("<strong>加粗text</strong>");
+				$("#box").html("<strong>加粗html</strong>");
+				
+				//在jQuery中 定义  $名称 ==jQuery名称    (库 $ )
+				//console.log(jQuery==$);
+				// jquery中  jQuery 就是$
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

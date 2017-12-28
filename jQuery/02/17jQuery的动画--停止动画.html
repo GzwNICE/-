@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box,#box2 {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			#box2 {
+				background-color: blue;
+				position: absolute;
+				top: 500px;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			// 如果页面上有连续多个动画  这些动画 会按照一定的顺序 进行排队  仿佛放入了一个队列里面  按照执行顺序
+			// 依次触发  直到全部执行完毕才可以停止
+			// stop() 停止动画的方法
+			$(function(){
+				$("#box").animate({width:500},2000).animate({height:300},2000);
+				
+				// 单击蓝色div  让红色div停止运动
+				
+				$("#box2").click(function(){
+					// stop() 两个参数   
+					// 第一个参数：是否清除队列
+					// 第二参数： 是否跳转到最终效果
+					// 如果不写参数  默认都是false  
+					//$("#box").stop(); // stop(false,false) 
+					// 停止当前的动画  如果有后续动画 则继续执行后续动画
+					//$("#box").stop(true);// 停止当前动画  清除整个动画队列  后续动画也不执行了
+					
+					
+					///$("#box").stop(true,true);// 停止当前动画 清除整个动画队列 所以说后续动画不执行了
+					// 因为第二个参数是true  所以会将当前动画直接跳转到当前动画的最终效果
+					
+					//$("#box").stop(false,true);// 停止当前动画  立马跳转到当前动画的最终效果，然后继续执行后续动画
+				
+					 //$("#box").finish();// 清除整个动画队列  到达所有动画的最后效果
+					 
+					 $("#box").stop(true);
+					 return false;
+				})
+				
+				$(document).click(function(){
+					
+					$("#box").animate({width:500},2000).animate({height:300},2000);
+					
+				})
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box2"></div>
+	</body>
+</html>

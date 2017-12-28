@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 50px;
+				height: 50px;
+				background-color: red;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+		/*	$("#box").animate();
+			第一个参数: json格式的对象  里面可以放置多个想要改变的属性  width:500
+			第二个参数  动画执行的时间*/
+			// 第三个参数: 运动形式  jQuery中提供给我们两个运动形式  swing（慢快慢）  linear 匀速运动 
+			//	在第三个参数这里 可以引入基于jQuery的第三方运动库里面的动画算法  实现多种运动形式
+			// 默认运动形式是慢快慢
+			//第四个参数： 回调函数
+			$(function(){
+				
+				// 
+				/*$("#box").animate({
+					width:200,
+					height:200,
+					left:500,
+					top:300
+				},1000,function(){
+					alert("运动完了")
+				})*/
+				
+				/*$("#box").animate({width:300},1000,function(){
+					$("#box").animate({height:400},1500);
+				})*/
+				///jquery 默认支持链式调用
+				$("#box").animate({width:300},1000).animate({height:400},1500)
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

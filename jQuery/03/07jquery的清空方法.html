@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				//清空内容 的第一个方法  元素.empty()  将该元素内部的所有内容清空 
+				
+				//$("#box").empty();  可以将里面的删除的子元素身上的事件也可以清除
+//				$("body").empty();
+				
+				// 第二个方法 html("") 没有将删除的子元素身上的事件清除
+//				$("body").html(""); body.innerHTML  = ""
+
+//				$("span").click(n)
+//				
+				/*$("#box").prepend("<strong>");
+				$("#box").empty();*/
+				
+				
+				// 第三方法  remove() 连自己都清除了  自杀一下
+				//$("#box").remove();
+				
+				// 克隆方法   cloneNode()
+				$("span").click(function(){
+					
+					alert(123);
+					
+				})
+				// 这个参数 true  加上以后 意味着可以将之前的元素身上的事件也复制过来
+				var newSpan = $("span").clone(true);
+				$("#box").after(newSpan);
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>span<a href="#">fdaf</a></span>
+			<p>ppppp</p>
+		</div>
+	</body>
+</html>

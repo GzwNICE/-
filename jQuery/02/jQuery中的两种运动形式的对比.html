@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 100px;
+			}
+			#box {
+				background-color: red;
+			}
+			#box2 {
+				background-color: blue;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$("#box").animate({width:1000},3000);
+				$("#box2").animate({width:1000},3000,"linear");
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		
+		<div id="box"></div>
+		<div id="box2"></div>
+	</body>
+</html>

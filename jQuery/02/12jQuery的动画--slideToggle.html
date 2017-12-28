@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				background-color:red;
+				display: none;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// slideDown()    slideUp()
+				// 第一个参数：动画执行时间   jQuery的动画  是时间版的 采用是tween算法       tween补间动画   js animate动画 速度版
+				// 第一个参数 如果不写  默认是正常 normal （400毫秒）
+				
+				// 第二参数： 回调函数（当当前动画执行完毕以后  继续后续的事情）  可选   
+				
+				
+				// 单击第一个按钮 让div 滑入
+//				$("input:eq(0)").click(function(){
+//					
+//					//$("#box").slideDown();
+//					
+//					/*$("#box").slideDown(1000,function(){
+//						$("#box").slideUp(2000);
+//					})*/
+//					
+//					// jQuery中有一个非常好的特性: 链式调用
+//					$("#box").slideDown(1000).slideUp(2000);
+//				})
+//				
+//				// 单击第二个按钮  让div滑出
+//				$("input:eq(1)").click(function(){
+//					
+//					$("#box").slideUp();
+//					
+//				})
+				
+				// 补充： slideToggle(动画执行时间，回调函数)
+				$("input:eq(2)").click(function(){
+					
+					$("#box").slideToggle(2000,function(){
+						alert("哈哈运动完了")
+					});
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" value="单击滑入" />
+		<input type="button" value="单击滑出" />
+		<input type="button" value="单击切换滑入滑出"/>
+		<div id="box"></div>
+	</body>
+</html>

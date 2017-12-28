@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				// 层级选择器
+				// 1 子代选择器
+	
+				$("#oUl>li").css("backgroundColor","green");
+				// 2 后代选择器
+				$("#oUl li").css("backgroundColor","red");
+			})
+		</script>
+	</head>
+	<body>
+		<ul id="oUl">
+			<li>aaaaaaa</li>
+			<li>aaaaaaa
+				<ul>
+					<li>1111</li>
+					<li>2222</li>
+					<li>3333</li>
+				</ul>
+			</li>
+			<li>aaaaaaa</li>
+			<li>aaaaaaa</li>
+		</ul>
+	</body>
+</html>

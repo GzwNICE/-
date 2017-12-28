@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$("ul li:contains(乐)").css("backgroundColor","red");
+				
+				// 我想选择包含p标签的div
+				$('div').has("p").css("backgroundColor","red");
+				
+				
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>新闻</li>
+			<li>哈哈哈</li>
+			<li>娱乐版块</li>
+			<li>兄弟</li>
+			<li>欢乐年</li>
+		</ul>
+		<div>
+			<span>span</span>
+			<span>span</span>
+			<span>span</span>
+		</div>
+		<div>
+			<p>pppp</p>
+			<p>pppp</p>
+			<span>span</span>
+			<span>span</span>
+			<p>pppp</p>
+		</div>
+	</body>
+</html>

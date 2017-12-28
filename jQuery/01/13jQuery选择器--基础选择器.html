@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			// 为了更好掌握jq选择器  模拟css去实现的 # . 
+			
+			$(function(){
+				
+				// ID选择器
+				$("#box").css("background-color","aqua");
+				// 类选择器
+				$(".abc").css("background-color","purple");
+				// 标签选择器
+				$("p").css("fontSize","50px");
+				
+				//并集选择器
+				$("#box,p,.oUl").css("border","2px solid green");
+				
+				//交集选择器
+				$("li.abc").css("color","deeppink");
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">div</div>
+		<span>span1</span>
+		<span class="abc">span2</span>
+		<span>span3</span>
+		<p>ppppp</p>
+		<ul class="oUl">
+			<li>aaaaaaa</li>
+			<li>aaaaaaa</li>
+			<li class="abc">aaaaaaa</li>
+			<li>aaaaaaa</li>
+		</ul>
+	</body>
+</html>

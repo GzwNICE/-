@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			/*a.append(b) 将b放入a的里面的最后面  
+			
+			a.prepend(b)  将b放入到a里面的最前面*/ 
+			
+			//a.after(b)  将b放入在a的并列关系的后面
+			
+//			a.before(b)   将b放在a的前面
+			
+			$(function(){
+				
+				$("#box").prepend($("<em>em标签</em>"));
+				
+				//$("#box").after("<strong>strong</strong>")
+				
+				var oA = $("#box>a");
+				
+				//$("#bigBox>span").before(oA);
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="bigBox">
+			<div id="box">
+				<span>span</span>
+				<a href="#">范德萨发顺丰</a>
+			</div>
+			<p>pppppp</p>
+			<span>span</span>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				// next();  该元素的下一个兄弟
+				$("#box strong").next().css("backgroundColor","orange");
+				// nextSilings() nextElementSilings()
+				// prev()  该元素的上一个兄弟
+				$("#box strong").prev().css("backgroundColor","blue");
+				
+				//  first()  该元素里面的第一个  类似firstChild
+				$("#box span:first").css('border',"2px solid aqua");
+				$("#box span").first().css('border',"2px solid aqua");
+				//$("#box:first")
+				//last();
+				//$("#box span:last").css("border","3px solid black");
+				$("#box span").last().css("border","3px solid black");
+				
+				//index(); js :index 代表索引
+				// 在jq里面 它指的当前元素的在兄弟里面排行老几  排行的序列 成为index()
+				// console.log(   $("#box>span:eq(1)").index() ); //0
+			})
+			// js的单击事件写法
+//			oBox.onclick = function(){
+//				
+//			}
+			// jq里面的单击事件
+//			$("#box").click(function(){
+//				
+//				
+//			});
+
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>pppppp</p>
+			<span>11111</span>
+			<strong>strong</strong>
+			<div>
+				<span>33333</span>
+				<span>444444</span>
+			</div>
+			<span>44444</span>
+			<a href="#">fdsfdf</a>
+		</div>
+	</body>
+</html>

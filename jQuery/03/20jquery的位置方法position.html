@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin:0;
+			}
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin: 100px;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+			}
+			#parent {
+				width: 300px;
+				height: 300px;
+				margin: 200px;
+				padding: 10px;
+				background-color: blue;
+				position: relative;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			//  offset()
+			
+			// offset({left:300,top:300})
+			
+			// position() 距离该元素 最近的具有定位属性的父级
+			
+			
+			$(function(){
+				//offsetLeft: 只读属性
+				//position 只读属性:  距离该元素 最近的具有定位属性的父级  
+				// 返回一个对象  left top 参考对象 是 最近的具有定位属性的父级 如果没有则是body
+				// 注意 永远不加自身margin
+				console.log($("#box").position()); // 不包含自身margin
+				console.log($("#box").position().left);
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="parent">
+			<div id="box"></div>
+		</div>
+		
+	</body>
+</html>

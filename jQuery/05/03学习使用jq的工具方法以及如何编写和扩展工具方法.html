@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			var abc = null;
+			var arr = [12,35,17];
+			var obj = {
+				name:"zs",
+				age:25
+			}
+			console.log(typeof abc);
+			console.log(typeof arr);
+			console.log(typeof obj);
+			
+			//$.type() //工具方法   不是专门为jq对象提供的  而是为其他数据类型提供的  typeof
+			console.log($.type(abc));
+			console.log($.type(arr));//array
+			console.log($.type(obj));//object
+			
+			
+			var str = "     fdsaff    ";
+			
+			console.log("("+$.trim(str)+")");
+			
+//			咱们能不能给jq添加工具方法呢? 可以的
+//			怎么添加?
+//			$.extend();专门给开发者提供一个用来扩展静态工具方法的api
+			//
+			$.extend({
+				add:function(a,b){
+					return a+b;
+				},
+				minus:function(a,b){
+					return a-b
+				}
+			})
+			// 经过以上操作 那么就会给jq函数添加静态工具方法
+			
+			
+			console.log($.add(13,35));
+			console.log($.minus(36,9));
+			console.log($.minus(94,62));
+			
+			$("#box").css()
+			$("#box").abc();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">div</div>
+	</body>
+	<script src="jq.js"></script>
+	<script type="text/javascript">
+		
+		// DOM对象 如何转换成jq对象  $()
+		var oBox = document.getElementById("box");
+		
+//		DOM对象==> jq对象
+//		domObj ==> $(domObj)
+		console.log($(oBox));
+		$(oBox).html("设置一些内容");
+		
+		// jq对象 如何转换成DOM 对象 
+		//$(obj) ==> $(obj)[索引]
+		// 第一种方式 （推荐）
+		//$("#box")[0].innerHTML = "<em>倾斜</em>";
+		// 第二种方式
+		$("#box").get(0).style.border = "3px solid red";
+		//$("#box").css("border","3px solid purple")
+	</script>
+</html>

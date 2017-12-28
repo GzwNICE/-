@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.abc {
+				width: 300px;
+				height: 200px;
+				background-color: red;
+			}
+			.haha {
+				border:5px solid green;
+				color: yellow;
+			}
+			.aa {
+				font-size: 50px;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"> </script>
+		<script type="text/javascript">
+			
+			$(function(){
+				// 操作类的一些方法
+				
+				// 1 addClass()  添加类
+					//addClass(对应的需要添加的类名) 不需要加.
+					// 如果想一次性加多个类  addClass(类1     类2) 中间用空格分割
+				
+				//$("#box").addClass("abc haha")
+				//$("#box").addClass("haha")
+				
+				// 2 removeClass() 移除类
+				//  removeClass(需要移除的类) 可以写多个 用空格隔开
+				//  removeClass()  如果不写参数  将该对象身上所有的类 全部干掉
+				//$("#box").removeClass("haha");
+				
+				//$("#box").removeClass();
+				
+				// 3 hasClass()  判断是否有这个类 如果有则返回true  如果没有这个类  返回false
+				
+				//console.log( $("#box").hasClass("zz"));
+				// 切换类操作
+				
+				//单击btn  如果div有haha类 则移除haha类  否则没有haha类 则加上haha类
+				
+				/*$("#btn").click(function(){
+					
+					if( $("#box").hasClass("haha") ) {
+						// 有haha类 则移除haha类
+						$("#box").removeClass("haha");
+						
+					} else {
+						// 否则没有haha类 则加上haha类
+						$("#box").addClass("haha");
+					}
+					
+				})*/
+				// class 提供了一个方法  toggleClass()
+				// 这个方法 用来切换类 （addClass 和removeClass组合）
+				
+				$("#btn").click(function(){
+					$("#box").toggleClass("haha");
+				})
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="切换类" id="btn" />
+		<div id="box" class="abc haha aa">div</div>
+	</body>
+</html>

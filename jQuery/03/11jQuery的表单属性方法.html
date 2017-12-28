@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+//			window.onload=function(){
+//				
+//				var  aInp = document.getElementsByTagName("input")[0];
+//				
+//				//aInp.checked = true;  disabled  selected
+//				
+//				
+//			};
+			$(function(){
+				// 表单里面的 checked disabled   selected  直接使用attr这个方法去获取 不是很准确
+				//console.log($("input").attr("checked"));//checked  undefined
+				//prop 这个方法是专门用来获取表单里面的这些checked disabled   selected 
+				
+				//console.log($("input").prop("checked")); //false true
+				
+				//$("input").prop("checked",true);
+				
+				//console.log($("input:eq(1)").attr("disabled"));
+				
+				//console.log($("input:eq(1)").prop("disabled"));
+				$("input:eq(1)").prop("disabled",false);
+				
+				// prop() 专门用来设置或者获取 表单中类似checked disabled   selected 
+				
+			})
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" />游泳
+		<input type="text" disabled="disabled"/>
+	</body>
+</html>

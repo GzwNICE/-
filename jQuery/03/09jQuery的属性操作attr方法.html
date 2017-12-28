@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+			}
+			p:nth-child(1) {
+				background-color: red;
+			}
+			p:nth-child(2) {
+				background-color: pink;
+			}
+			p:nth-child(3) {
+				background-color: hotpink;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				// 当一个方法 是设置方法的时候 那么 它会把所有的元素 都设置一遍
+				// 当一个方法当获取方法的时候 那么 它会获取所有的元素的第一个
+				/*alert( $("p").css("background-color") );
+				$("p").css("backgroundColor","green");*/
+				
+				/*setAttribute
+				getAttribute
+				removeAttribute*/
+				
+				//attr() 可以设置或者是获取html属性
+				// 设置单个属性
+//				$("div").attr("title","哈哈");
+//				$("div").attr("id","oBox");
+//				$("div").attr("alt","呵呵");  //alt 方便盲人上网 阅读图片的 用户体验
+				
+				// 设置多个属性：传入json格式数据
+//				$("div").attr({
+//					"title":"哈哈",
+//					"id":"oBox",
+//					"alt":"美女"
+//				})
+				$("p").attr({
+					"id":"oBox",
+					"alt":"美女",
+					"style":"height:300px;border:1px solid black"
+				})
+				
+				
+				// 读取attr  只读第一个  没有没有这个属性  则为undefined
+				//alert($("p").attr("title"));
+				
+				//removeAttr();
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div>div</div>
+		<p >11111</p>
+		<p title="bbb">22222</p>
+		<p title="ccc">333333</p>
+	</body>
+</html>

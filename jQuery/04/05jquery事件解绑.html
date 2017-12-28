@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p>ppp</p>
+			<span>span</span>
+		</div>
+	</body>
+	<script src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		
+//		document.getElementById("box").onclick = function(){
+//			console.log(123);
+//		}
+//		document.getElementById("box").onclick = null;
+		
+		
+//		$("#box").click(function(){
+//			console.log(123);
+//		})
+//		//$("#box").click(null);   // jquery 内部 通过 addEventListener 绑定的 
+//		
+//		$("#box").off("click");// 普通事件绑定  可以通过off取消事件
+		
+		
+//		$("#box").bind("click mouseout",function(){
+//			console.log(123);
+//		})
+//		
+//		$("#box").unbind("click");
+		
+		
+	/*	$("#box").delegate("","click",function(){
+			console.log(789);
+		})
+		
+		$("#box").undelegate("click");*/
+		
+		$("#box").on("click mouseover mouseout",function(e){
+			console.log(e.type);
+		});
+		
+		//$("#box").off("click mouseover");
+		$("#box").off()
+		
+	</script>
+</html>

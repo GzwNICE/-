@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				background-color:red;
+				display: none;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				// fadeIn()   fadeOut()  fadeToggle()
+				// 第一个参数  动画执行时间  可以写数值 500   1000  
+				// 也可以固定字符串 "slow"600 "normal"(400) "fast" 200
+				 // 注意下: 事实上 这几个方法 中间还可以有一个参数 就是运动形式  (可以更改)
+				// 第二个参数 回调函数 
+				
+				// 单击按钮1  让div淡入
+				$("input").eq(0).click(function(){
+					
+					$("#box").fadeIn(2000);
+					
+				})
+				
+				//单击按钮2  让div淡出
+				$("input:eq(1)").click(function(){
+					
+					$("#box").fadeOut(2000,function(){
+						alert("淡出完了")
+					})
+					
+				})
+				
+				// 单击按钮3 让div切换淡入淡出
+				
+				$("input:eq(2)").click(function(){
+					
+					$("#box").fadeToggle("slow");
+					
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="单击淡入" />
+		<input type="button" value="单击淡出" />
+		<input type="button"  value="单击淡入淡出切换"/>
+		<div id="box"></div>
+	</body>
+</html>

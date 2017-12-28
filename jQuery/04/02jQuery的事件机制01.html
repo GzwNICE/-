@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			// jquery中  有好几种 书写事件的方法
+			// 第一种绑定事件的方式  ：简单事件绑定
+			
+			$(function(){
+				
+				$("#box").click(function(){
+					
+					alert(123);
+					
+				})
+				$("#box").mouseout(function(){
+					
+					alert(456);
+					
+				})
+				// 缺点是 不能一次性 书写多个事件
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">box</div>
+	</body>
+</html>

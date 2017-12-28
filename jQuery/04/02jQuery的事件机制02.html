@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			// jquery中  有好几种 书写事件的方法
+			// 第二种绑定事件的方式  ：bind事件绑定
+			// 可以同时绑定多个事件 用空格隔开
+			// 这种绑定方式 不支持 事件委托 不支持动态绑定事件
+			$(function(){
+				
+//				$("#box").bind("click",function(){
+//					alert(123);
+//				})
+//				$("#box").bind("click mouseout",function(){
+//					alert(123);
+//				})
+
+//				$("#box").bind({
+//					"click":function(e){console.log(123);},
+//					"mouseout":function(e){console.log(456);}
+//				})
+				
+				// 可以传入一些数据
+				
+//				$("#box").bind("click",{name:"zs",age:25},function(e){
+////					console.log(e.data);
+//					console.log("我的名字叫"+e.data.name);
+//				})
+				
+				$("#box").bind({
+					"click":function(e){console.log(e.data.name);},
+					"mouseout":function(e){console.log(e.data.age);}
+				},{name:"zs",age:25})
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">box</div>
+	</body>
+</html>

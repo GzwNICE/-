@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			//筛选选择器
+			
+			// 1 children()   孩子们 (直接子代)  参数是可选的  有点类似  $("ul>li")
+			
+			$(function() {
+				
+				//$("#box").children().css("border","2px solid skyblue");
+				//$("#box").children("span").css("border","2px solid skyblue");
+				
+				// 2 find() 发现   所有 有点类似 $("ul li")
+				
+				//$("#box").find("span").css("border","2px solid greenyellow");
+				
+				// 3 siblings() 并列关系的 其他兄弟们 参数可以指特定的兄弟
+				//$("#abc").siblings().css("backgroundColor","#123456");
+				//$("#abc").siblings("span").css("backgroundColor","#654321");
+				
+				// 4 parent()
+				//$("#abc").parent().css("border","5px solid #987654");
+				
+				//$("#abc").siblings("div").find("span").parent().parent().css("border","5px solid yellow")
+				
+				// 扩展 parents();  该元素上面的所有的直系父级 一直到文档根元素html为止  可选参数
+				
+				//$(".hehe").parents().css("background-color","chocolate");
+				$(".hehe").parents("#box").css("background-color","chocolate");
+				// 5 eq(index) 
+				$("#box span").eq(1).css("backgroundColor","yellow");
+				
+				
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>pppppp</p>
+			<span>11111</span>
+			<strong></strong>
+			<span id="abc">2222</span>
+			<div>
+				<span>111111</span>
+				<span class="hehe">222221</span>
+			</div>
+			<a href="#">aaaaa</a>
+			<span>33333</span>
+			<span>44444</span>
+		</div>
+	</body>
+</html>

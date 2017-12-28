@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 2000px;
+        }
+    </style>
+    <!--1. 引入jquery文件-->
+    <script src="jquery-1.12.4.js" ></script>
+    <!--2. 引入插件文件-->
+    <script src="jquery.lazyload.js"></script>
+    <script>
+        $(function () {
+            //3. 使用插件
+            $("img.lazy").lazyload();
+        });
+    </script>
+</head>
+<body>
+<!--在实际的项目开发中，我们通常会遇见这样的场景：
+	一个页面有很多图片，而首屏出现的图片大概就一两张，
+	那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，
+	不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，
+	技术上现实其中要用的技术就是图片懒加载--到可视区域再加载。
+	
+	
+	
+	-->
+<div></div>
+<img class="lazy"  data-original="img/0001.jpg">
+<div></div>
+<img class="lazy" data-original="img/0001.jpg">
+</body>
+</html>

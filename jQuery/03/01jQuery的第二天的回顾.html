@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		一、 jQuery中DOM操作样式的方法
+			1  直接操作样式的css 方法  既能读取数据也能设置数据
+				$().css();
+				
+				设置单个样式  css(属性名,属性值)
+				css("backgroundColor","red");
+				
+				css("background-color","red");
+				
+				css(backgroundColor,"red")
+				
+				设置多个样式  传入json格式数据
+				css({
+					  属性名:属性值,
+					  属性名:属性值,
+					  属性名:属性值
+				})
+				
+				css({
+					color:"blue",
+					fontSize:"30px"/30
+				})
+				
+				读取数据  查看一下box的背景颜色 css(属性名)
+				
+				alert(  $("#box").css("backgroundColor") );
+			2 class相关方法
+				01 addClass(类名  类名  类名)  添加类的方法
+				
+				02 removeClass(类名  类名  类名)  如果不写参数  意味移出该元素的所有类
+				
+				03 hasClass() 判断该元素是否有类
+				
+				04 toggleClass()  切换类
+				
+				tab栏切换案例
+				
+		二、 动画系列
+			1 show和hide
+				如果不加参数  意思是直接显示和隐藏  没有动画效果
+				
+				show()
+				hide()
+				第一个参数 动画执行时间  具体的数值 1000毫秒 500毫秒   或者写固定字符串 "slow"600   "normal":400  "fast":200
+				第二个参数： 回调函数： 当前动画执行完毕之后 具体操作和实现什么事情 可以写在回调函数中
+				
+				实质上：这组动画改变的是元素的宽高和透明度
+				
+				补充： toggle()  可以在显示和隐藏之间切换 
+			
+				
+			2 slideDown 和slideUp 滑入和滑出
+				slideDown() 滑入
+				slideUp()  滑出
+				第一个参数 动画执行时间  具体的数值 1000毫秒 500毫秒   或者写固定字符串 "slow"600   "normal":400  "fast":200
+				第二个参数： 回调函数： 当前动画执行完毕之后 具体操作和实现什么事情 可以写在回调函数中
+				
+				补充： slideToggle() 在滑入和滑出之间切换
+				
+				案例：将下拉菜单改造成滑入效果  （出现了一个小问题  动画排队问题  所以说了stop()）
+				
+			3 fadeIn 和fadeOut
+			
+				fadeIn()  淡入   
+				fadeOut() 淡出
+				其实两者都是改的元素的透明度
+				
+				第一个参数 动画执行时间  具体的数值 1000毫秒 500毫秒   或者写固定字符串 "slow"600   "normal":400  "fast":200
+				第二个参数： 回调函数： 当前动画执行完毕之后 具体操作和实现什么事情 可以写在回调函数中
+				
+				fadeToggle()  在淡入和淡出之间切换 参数和上面一样  只是都同一设置和控制
+				
+				fadeTo(); 将元素变化到指定透明度  
+				第一个参数 动画执行时间  具体的数值 1000毫秒 500毫秒   或者写固定字符串 "slow"600   "normal":400  "fast":200
+				第二个参数： 你写的指定透明度 0.3
+				第三个参数： 回调函数
+				
+		三、 animate 自定义动画
+			第一个参数 json格式 里面可以写多个想要变化的属性
+			第二个参数 动画执行时间 
+				  具体的数值 1000毫秒 500毫秒   或者写固定字符串 "slow"600   "normal":400  "fast":200
+			第三个参数 运动形式  jQuery提供了两个 "swing" 默认 慢快慢  linear   可以引入第三方的动画库 实现多种运动形式 tween.js
+			
+			第四个参数： 回调函数
+			animate({
+				
+				
+			})
+			
+			360开机动画案例
+			
+		   stop停止动画
+		   	stop()
+		   	两个参数：
+		   		第一个参数  是否清除动画队列 true  false
+		   		第二个参数 是否跳转到当前动画的最终效果 true  false
+		   		
+		   		如果两个参数都不写 默认都是false
+		   		stop()
+		   		stop(true)
+		   		stop(true,true)
+		   		stop(false,true)
+		   		
+		   		finish() 清除整个动画队列  直接到达所有的动画的最终效果
+		   		
+		   		补充：delay() 延迟 动画执行之前 先延迟一下时间  单位毫秒
+	</body>
+</html>

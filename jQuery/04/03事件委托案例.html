@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="oUl">
+			<li>你写的第1个内容<a href="javascript:;">删除</a></li>
+			<li>你写的第2个内容<a href="javascript:;">删除</a></li>
+			<li>你写的第3个内容<a href="javascript:;">删除</a></li>
+			<li>你写的第4个内容<a href="javascript:;">删除</a></li>
+			<li>你写的第5个内容<a href="javascript:;">删除</a></li>
+			
+		</ul>
+	</body>
+	<script src="jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		
+//		var oUl = document.getElementById("oUl");
+//		
+//		oUl.onclick = function(e){
+//			
+//			e = e|| event;
+//			
+//			
+//			
+//			var target = e.srcElement || e.target;
+//			//console.log(e.target);
+//			if(target.nodeName == "A") {
+//				
+//				this.removeChild(target.parentNode);
+//			}
+//			
+//		}
+//		
+		$("#oUl").delegate("a","click",function(e){
+			
+			console.log(e.type);// 当前的事件类型
+			console.log(e.target);// 点了谁就是谁
+			
+			console.log(this);// 当前的被委托的子元素
+			console.log(e.delegateTarget);// 当前委托的父级
+			
+			//e.delegateTarget.
+			// 让当前 你单击的那个a 那个a的父级 去移除 自己包含里面的内容
+			$(e.target).parent().remove()
+		})
+		
+	</script>
+</html>

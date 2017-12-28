@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			一  jQuery的动画补充:
+				
+				1 fadeTo()   
+					第一个参数: 动画执行时间  
+					第二个参数 : 变化到指定透明度
+					第三个参数 : 回调函数
+					
+				2 animate() 
+					delay()  在动画执行之前  可以加一段时间的延迟 单位是毫秒 
+					参数: 1000ms
+					
+				3 jQuery 动画方法里面默认不支持颜色变化
+				 如果想支持 例如 backgroundColor  color 属性变化
+				 需要引入基于jQuery的颜色插件 jQuery-color.min.js
+				 
+			二  jQuery的DOM 节点操作
+				1 如何创建节点:	
+					
+					1.1  
+					var oDiv = $("<div>哈哈</div>");
+					$().append(oDiv);
+					1.2 $().append("<div>");
+					
+					1.3 
+					$().html("<div>哈哈</div>");
+				2  其他的添加dom节点方法
+					
+					prepend()
+					append()
+					before();
+					after();
+				3 清空dom节点:
+					3.1 empty() 
+					3.2 html("")
+					3.3 remove(); (里面清空以及自己也清除)
+			三 jquery中的属性操作:
+				
+				1  attr方法  attribute 属性
+					可以设置或者获取(普通属性)属性
+					
+					attr("title","哈哈");
+					attr({
+						alt:"abc",
+						class:"cc box",
+						style:"width:100px"
+					})
+					
+					attr("alt")
+					
+					美女相册案例
+				2 prop  专门用来获取和设置 表单里面的诸如 disabled  checked selected //property 属性
+					
+					全选案例
+					
+				3 val()  获取和设置表单里面的文本框或者文本域中的内容
+				
+					文本框的焦点事件 案例
+				4 html() 和text()
+					动态输入案例
+				5 jQuery中的尺寸方法
+					
+					height() height
+					innerHeight() height+ 上下padding
+					outerHeight();height+ 上下padding+ 上下border
+					outerHeight(true)height+ 上下padding+ 上下border+ 上下margin
+					
+					width 也有四个相应的方法
+				
+				6 offset() 方法 
+					相对于文档的位置
+					返回一个json对象 里面有相对于document的left值和top值
+				
+					offset({left:300,top:300})
+					
+//					你设置完毕之后  相对于document 按照你的设置操作 进行位置调整 让该元素和文档之间的距离
+//					定为你设置的距离,这个时候它会和自身原来的位置有了偏差 ,这个偏差或者往左了或者往右,
+//					会将这个偏差值 设置到页面上
+					
+				  position() 距离它最近的具有定位属性的父级 如果没有 则指向body
+//				  注意一下:这个方法 和offsetParent  offsetLeft 有区别
+//				   自身margin 不包括
+//				   
+//				   这个方法是只读属性  不能设置
+				7 scrollTop() scrollLeft()
+				a.scrollTop() a元素内部的垂直方向滚动条滚动过的距离
+				它已经处理好了兼容性问题
+				可以设置 也可以获取
+				
+					固定导航栏案例
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

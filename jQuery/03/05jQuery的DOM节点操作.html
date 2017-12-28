@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			/*appendChild 
+			insertBefore
+			
+			removeChild
+			replaceChild
+			
+			createElement
+			*/
+			
+			$(function(){
+				
+			/*	var oDiv = document.createElement("div");
+				oDiv.innerHTML = "哈哈哈";
+				document.body.appendChild(oDiv);*/
+				
+				//document.body.innerHTML = "<div><span>fdsdfd</span></div>"
+				
+				
+				// 1 jquery中如何创建元素
+				
+				//$("div")
+					/* var oDiv = $("<div>这是div的内容</div>")
+					 $("body").append(oDiv);*/
+				   //$("body").append( $("<div>") );
+				   // $("body").append( "<strong>哈哈哈哈</strong>" );
+				    
+//				    方法一: 
+//				    // 通过$ 方法 直接创建一个标签元素
+//				     var oP = $("<p>")  var oSpan = $("<span>");
+//				     //通过append方法 将创建好的元素放入页面中去
+//				     append(oP)  append(oSpan)
+//				     如果想要在创建的同时 往里面 加内容  那就需要将标签写完整  里面直接写内容
+//				 方法二: 
+//				 	append("<span>")
+
+				//方法三: 直接通过html() 写入元素
+					
+					
+				//	$("#box").html("<span>span标签</span>")
+				
+			/*	总结: jQuery里面的创建元素的方法:
+					1  var oDiv  = $("<div>") / $("<div>哈哈哈</div>")
+					   $().append(oDiv)
+					   
+					2  $().append("<strong>") / $().append("<strong>fdsfdf</strong>");
+					
+					3 $().html("<b>b标签</b>");*/
+				
+				
+				var oSpan = $("span");
+				$("#box").append(oSpan);
+				//如果获取的是已经页面上存在的元素  把这个元素放入到另外一个元素中 那么是类似于剪切的功能
+				//$("#box").html("<strong>傲娇</strong>")
+				
+				$("#box").append("<b>");
+				/*innerHTML = "发发发地方";
+				innerHTML = "辅导费三"*/
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<span>span标签</span>
+	</body>
+</html>

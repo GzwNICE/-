@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin:0;
+			}
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin: 100px;
+				/*position: relative;*/
+			}
+			#parent {
+				width: 300px;
+				height: 300px;
+				margin: 200px;
+				padding: 10px;
+				background-color: blue;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			/*offsetParent: 距离该元素 最近的具有定位属性的父级
+			offsetLeft
+			offsetTop*/
+			
+			//jQuery  offset 设置或者获取元素相对于文档document的位置
+			$(function(){
+				
+				console.log($("#box").offset());
+				console.log($("#box").offset().top);
+				// 会返回一个对象 { left:100,top:100}
+				//{left:310,top:310}
+				
+				
+				//$("#box").offset({left:300,top:300}) // 310 
+				
+				// 如果设置这个offset方法的时候 它是相对于文档做位置调整，left:200,让这个
+				// 元素到document之间的距离为200， 比如他原来距离文档是310, 自身向左减去110，
+				// left:-110 
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="parent">
+			<div id="box"></div>
+		</div>
+		
+	</body>
+</html>

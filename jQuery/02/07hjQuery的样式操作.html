@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.lei{
+				color: red;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+			// 在jQuery或者js中 如果用程序去设置样式  直接设置  定义一个类  通过添加删除类来实现样式操作
+			
+			/*style.color = "red"
+			className = "lei"*/
+			
+			// 在jQuery里面设置样式  css方法
+			
+			
+			
+			$(function(){
+				
+				//１　如果想要设置单个样式
+				
+				//$("#box").css("border","1px solid red");
+				// 2 想要设置多个样式  可以接收一个json对象 里面可以写多个样式
+				
+//				$("#box").css({
+//					"backgroundColor":"blue",
+//					"border":"2px solid purple",
+//					"color":"orange"
+//				})
+//				$("#box").css({
+//					backgroundColor:"blue",
+//					border:"2px solid purple",
+//					color:"orange"
+//				})
+				
+				$("#box").css({
+					"background-color":"blue", // 不加引号 不能直接写css的语法
+					"border":"2px solid purple",
+					"color":"rgb(255, 165, 0)"
+				})
+				
+				// 3 想要读取css属性
+				
+				alert( $("#box").css("backgroundColor"));
+				alert($("#box").css("color"))
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">div</div>
+	</body>
+</html>

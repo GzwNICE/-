@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			// show()  和hide()
+			// 如果不写参数  相当于 直接显示和直接隐藏
+			// 参数： 第一个参数： 动画执行时间 1000毫秒  可以写字符串常量  "slow":600  "normal":400 "fast":200 
+			//   第二个参数  回调函数 可选  
+			$(document).ready(function(){
+				// 单击第一个按钮 让div显示
+				$("input:eq(0)").click(function(){
+					$("#box").show("fast",function(){alert("显示动画完了")});
+				})
+				// 单击第二个按钮 让div隐藏
+				$("input:eq(1)").click(function(){
+					$("#box").hide("slow",function(){
+						alert("隐藏动画执行完毕")
+					});
+				})
+				
+				
+				//通过toggle方法来实现切换显示和隐藏
+				// toggle(动画时间,回调函数)
+				$("input:eq(2)").click(function(){
+					
+					 $("#box").toggle(2000,function(){
+					 	alert("haha")
+					 })
+				})
+			})
+			
+			// 补充一个切换显示和隐藏  toggle()
+			/*// anmate.js
+			animate({
+				width:0,
+				height:0,
+				opacity:0
+			},1000)
+			
+			animate({
+				width:100,
+				height:100,
+				opacity:1
+			},2000)*/
+		</script>
+	</head>
+	<body>
+		<input type="button" value="让div显示" />
+		<input type="button" value="让div隐藏" />
+		<input type="button" value="切换显示和隐藏" />
+		<div id="box"></div>
+	</body>
+</html>

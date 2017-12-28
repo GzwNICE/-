@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			一  jQuery的概念:
+				什么是jQuery?
+				
+				如何学习jQuery以及学习什么?  api
+				
+				如何下载和使用jQuery?
+//					npm install jquery -g
+//					在线cdn vpn  dns ip dhcp   http  
+				
+				使用jQuery三个步骤?
+					1 引包
+					2 入口函数
+					3 具体代码实现
+				jQuery的版本问题?
+					1.x.x 兼容IE6 7 8 我们现在使用是1版本的最高版本  1.12.4  1.11.3
+					2.x.x 
+					3.x.x
+				同一版本 压缩版（生产阶段使用)和未压缩版(开发和学习阶段使用)
+				jquery.1.12.4.min.js
+				
+				jquery的常见的引包错误: 一定要放在入口函数的前面  一定要注意路径是否正确
+				
+			二 选择器:
+				1 基础选择器:
+					id选择器 $("#box")
+					类选择器 $(".box")
+					标签选择器 $("div")
+					并集选择器 $('#box,a,p')
+					交集选择器 $("div.abc");
+				2 层级选择器
+					子代选择器  $("ul>li")
+					后代选择器 $("ul li")
+				3 过滤选择器
+					:eq(index)  $("#box:eq(1)")
+					:odd
+					:even
+				4 筛选选择器
+					$("#box").eq(1)
+					siblings()
+					find("li")
+					children();
+					parent();
+					parents();
+				
+				next();
+				prev();
+				
+				first();
+				last();
+				
+				index();// 在当前的所有兄弟们当中的排行老几
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

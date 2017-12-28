@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				display: none;
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				margin-bottom: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+			// 当整个页面文档全部加载完毕
+			//（html css以及外部引入的图片以及其他资源全部加载完毕之后才会触发）
+			window.onload=function(){
+				
+				//1 获取事件源 获取事件相关元素
+				var aInp = document.getElementsByTagName("input");
+				
+				var aDiv = document.getElementsByTagName("div");
+				
+				// 2  事件类型 click
+				aInp[0].onclick = function() {// 3 关联事件驱动程序  事件处理函数
+					// 3做事情 一单击 让所有的div全部显示
+					
+					for(var i = 0; i < aDiv.length; i++) {
+						
+						aDiv[i].style.display = "block";
+						
+					}
+					
+				}
+				
+				// 单击按钮2  设置所有的div 里面的内容都为 哈哈哈
+				aInp[1].onclick = function() {
+					
+					// 设置所有的div 里面的内容都为 哈哈哈
+					for(var i = 0; i < aDiv.length; i++) {
+						
+						aDiv[i].innerText = "哈哈哈哈";
+						// innerText 原生js里面   旧版火狐浏览器不支持 有兼容性问题  （新版火狐没问题）
+					}
+				}
+				
+			};
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="单击按钮生成3个div" />
+		<input type="button" value="单击按钮设置div里面的内容" />
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

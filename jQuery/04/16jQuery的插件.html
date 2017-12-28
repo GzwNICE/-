@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script src="jquery-1.12.4.js"></script>
+		<script src="jquery.color.js"></script>
+		<script >
+			
+			$(function(){
+				
+				
+					$("#box").animate({
+							backgroundColor: jQuery.Color({ saturation: 0})
+					}, 1500 );
+				
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">div</div>
+	</body>
+</html>

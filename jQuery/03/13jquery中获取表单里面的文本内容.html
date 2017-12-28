@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.12.4.js"></script>
+		<script type="text/javascript">
+			
+//			window.onload=function(){
+//				
+//				var aInp = document.getElementsByTagName('input');
+//				
+//				aInp[1].onclick = function(){
+//					
+//					console.log(aInp[0].value);
+//				}
+//				// 在js里面  表单里面的value 获取的时候 随时更改的结果  但是value属性里面存的是最初的值
+//			};
+			
+			$(function(){
+				
+				$("input:eq(1)").click(function(){
+					
+					//console.log($("input:eq(0)").attr("value")); 、//getAttribute
+					console.log( $("input:eq(0)").val());
+				})
+				
+				// 通过attr这个属性  去获取页面上表单文本框中的value值  永远获取的是最初的那个value值
+				// 而且页面上的那个value值不会变化  永远是最初的那个value
+				// 所以我们必须通过val() 这个方法去获取文本框中
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" value="呵呵呵"/>
+		<input type="button" value="单击获取文本框内容" />
+	</body>
+</html>
+

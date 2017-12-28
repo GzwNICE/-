@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript">
+			//1 入口函数:
+			//  原生js里面 如果写入口函数 只能写一个 如果有多个 会发生覆盖问题
+			//  jq中的入口函数 如果由多个 不会发生覆盖
+//			window.onload=function(){
+//				alert(123);
+//			};
+//			window.onload=function(){
+//				alert(456)
+//			};
+
+//			$(document).ready(function(){
+//				
+//				alert(123);
+//				
+//			})
+//			$(document).ready(function(){
+//				
+//				alert(456);
+//				
+//			})
+
+			$(function(){
+				alert(123);
+			})
+			$(function(){
+				alert(456);
+			})
+			
+			2. 原生js 在获取元素的时候 如果写错了 类似于这样的情况 会报错  那么后面代码不会执行
+			   jQuery 在获取元素的时候 如果没有获取对 不会报错 当前功能既便是无法使用 但是后面的代码依然可以执行
+			   jQuery的容错性比较好
+			   
+			   //飞机正在飞行: 因为某一个零件出错了  保证整个飞机其他地方正常运行
+			   
+			 3 原生js中有很多兼容性问题  需要考虑 你常常需要封装函数处理
+			 jquery 使用的时候 不再考虑兼容性问题
+			 oBtn.onclick = function(event) {
+			 	//event = event || window.event;
+			 	event;
+//			 	document.documentElement.scrollTop || document.body.scrollTop;
+			 }
+			 4 操作复杂性
+			 	js操作非常繁琐
+			 	jq操作非常简单方便
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		
+	</script>
+</html>

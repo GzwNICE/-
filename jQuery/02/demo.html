@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				display: none;
+			}
+		</style>
+	</head>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aLi = document.getElementsByTagName("li");
+			var aDiv = document.getElementsByTagName("div");
+			for(var i = 0; i < aLi.length; i++) {
+				aLi[i].index = i;
+				aLi[i].onmouseover = function(){
+					for(var i = 0; i < aLi.length; i++) {
+						
+						aDiv[i].style.display  = "none"
+					}
+					aDiv[this.index].style.display = "block"
+					
+				}
+				
+			}
+		};
+		
+	</script>
+	<body>
+		<ul>
+			<li>li
+				<div>div</div>
+			</li>
+			<li>li
+				<div>div</div>
+			</li>
+			<li>li
+				<div>div</div>
+			</li>
+			
+		</ul>
+	</body>
+</html>

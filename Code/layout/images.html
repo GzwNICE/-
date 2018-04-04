@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>彩色图片变成黑白</title>
+  <base target="_blank"/>
+  <style>
+      *{
+        margin: 0;
+        padding: 0; 
+      }
+      html {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      html,body {
+          height: 100%;
+          margin: 0;
+      }
+      body {
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-flex;
+          display: flex;
+          justify-content:center;
+          flex-direction:column;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        -webkit-box-shadow:  0px 0px 10px rgba(0, 0, 0, .8);
+        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+        z-index: 100;
+      }
+      span {
+          font-size: 18px;
+          color: transparent;
+          text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+      }
+      img{
+        display: block;
+        width: 400px;
+      }
+      .img1 {
+        margin-top: 10px;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+      }
+      a[href^="http"]:empty::before {
+          content: attr(href);
+      }
+      /* 禁止鼠标事件
+      a {
+        pointer-events: none;
+      } */
+      h2 {
+         background: linear-gradient(to right, red, blue);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      h3{
+        position: relative;
+        color: yellow;
+      }
+      h3:before{
+          content: attr(text);
+          position: absolute;
+          z-index: 10;
+          color:pink;
+          -webkit-mask:linear-gradient(to right, red, transparent);
+      }
+  </style>
+</head>
+
+<body>
+    <span>彩色：</span>
+    <img  src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/6OxqSqWBqsJ46VG4XsO7C8GqjzicY6SayQfRNBd6SrRMViaCL1pPMrCwiaFw2QCyNloM4YerickWpPgU8AYY07SLbw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&retryload=1">
+    <span>黑白：</span>
+    <img class='img1' src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_jpg/6OxqSqWBqsJ46VG4XsO7C8GqjzicY6SayQfRNBd6SrRMViaCL1pPMrCwiaFw2QCyNloM4YerickWpPgU8AYY07SLbw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&retryload=1">
+    <span>高级css技巧：</span>
+    <a href="https://blog.csdn.net/xishining/article/details/79546568"></a>
+    <span>Flex水平垂直居中：</span>
+    <a href="https://blog.csdn.net/qianqianstd/article/details/60609389"></a>
+    <h2>通过学习实现文字渐变</h2>
+    <h3 text="通过学习实现文字渐变">通过学习实现文字渐变</h3>
+    <a href="https://blog.csdn.net/fe_dev/article/details/78450844"></a>
+    <h2>linear-gradient</h2>
+    <a href="http://www.css88.com/book/css/values/image/linear-gradient().htm"></a>
+    <h2>CSS3 渐变（Gradients）</h2>
+    <a href="http://www.runoob.com/css3/css3-gradients.html"></a>
+</body>
+</html>

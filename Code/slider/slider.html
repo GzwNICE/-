@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PC轮播图插件</title>
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 800px;
+            height: 600px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="am-slider am-slider-default">
+        <ul class="am-slides">
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" />
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" />
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" />
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" />
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" />
+            </li>
+            <li>
+                <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" />
+            </li>
+        </ul>
+    </div>
+</body>
+
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+        $('.am-slider').flexslider({
+            slideshow: true, // Boolean: 是否自动播放
+            slideshowSpeed: 2500, // Integer: ms 滚动间隔时间
+            animationSpeed: 600, // Integer: ms 动画滚动速度
+            pauseOnAction: true, // Boolean: 用户操作时停止自动播放
+            pauseOnHover: true, // Boolean: 悬停时暂停自动播放
+            prevText: "Previous", // String: 上一个按钮文字
+            nextText: "Next", // String: 下一个按钮文字
+            itemWidth: 400, // Integer: slide 宽度，多个同时滚动时设置
+            itemMargin: 10, // Integer: slide 间距
+            // minItems: 1, // Integer: 最少显示 slide 数, 与 `itemWidth` 相关
+            maxItems: 2, // Integer: 最多显示 slide 数, 与 `itemWidth` 相关
+            move: 2, // Integer: 一次滚动移动的 slide 数量，0 - 滚动可见的 slide
+
+        });
+    });
+</script>
+
+</html>

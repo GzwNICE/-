@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单击和双击事件</title>
+  <style>
+      .box{
+        width: 400px;
+        height: 400px;
+        background-color: #ccc;
+        text-align: center;
+        line-height: 400px;
+        margin: 100px auto;
+        /* user-select:none; */
+      }
+  </style>
+</head>
+<body>
+    <div class="box"  onselectstart="return false;">
+       点击事件
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $(function(){
+    var timeoutID = null;
+    $('.box').on('click',function(){
+      clearTimeout(timeoutID);
+      timeoutID= window.setTimeout(function(){
+        $('.box').css('backgroundColor','orange')
+      }, 200);
+    })
+    $('.box').on('dblclick',function(){
+      clearTimeout(timeoutID);
+      $(this).css('backgroundColor','yellow')
+    })
+  })
+</script>
+</html>

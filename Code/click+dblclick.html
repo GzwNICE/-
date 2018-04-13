@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>单击和双击事件</title>
   <style>
+      body {
+          margin: 0;
+          padding: 0;
+          user-select:none;
+      } 
       .box{
         width: 400px;
         height: 400px;
@@ -17,7 +22,8 @@
 </head>
 <body>
     <div class="box"  onselectstart="return false;">
-       点击事件
+       <abbr title='abc'>点击事件</abbr>
+       <!-- 缩略字符标识标签 -->
     </div>
 </body>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -27,12 +33,14 @@
     $('.box').on('click',function(){
       clearTimeout(timeoutID);
       timeoutID= window.setTimeout(function(){
-        $('.box').css('backgroundColor','orange')
+        $('.box').css('backgroundColor','orange');
+        $('.box').html('现在是单击')
       }, 200);
     })
     $('.box').on('dblclick',function(){
       clearTimeout(timeoutID);
-      $(this).css('backgroundColor','yellow')
+      $(this).css('backgroundColor','yellow');
+        $('.box').html('现在是双击');
     })
   })
 </script>

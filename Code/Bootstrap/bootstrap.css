@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: content-box;
+  width: 200px;
+  height: 200px;
+}
+// Small devices (landscape phones, 576px and up)
+@media screen(min-width: 576px) { 
+  body {
+    background-color: #fefbfe;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen(min-width: 768px) { 
+   body {
+    background-color: #ccc;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media screen(min-width: 992px) { 
+ body {
+    background-color: #000;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media screen(min-width: 1200px) { 
+   body {
+    background-color: #orange;
+  }
+}

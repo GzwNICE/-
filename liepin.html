@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./common.css">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+  <style>
+    img {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-tab" id="slider">
+      <ul>
+          <li class="job4"><a href="https://m.liepin.com/register/"><img src="https://event.liepin.com/t/1484032452103/images/job1.png" alt=""></a></li>
+          <li class="job5"><a href="https://m.liepin.com/register/"><img src="https://event.liepin.com/t/1484032452103/images/job2.png" alt=""></a></li>
+          <li class="job0"><img src="https://event.liepin.com/t/1484032452103/images/job3.png" alt=""></li>
+          <li class="job1"><img src="https://event.liepin.com/t/1484032452103/images/job4.png" alt="" class="job4-img"></li>
+          <li class="job2"><img src="https://event.liepin.com/t/1484032452103/images/job5.png" alt=""></li>
+          <li class="job3"><img src="https://event.liepin.com/t/1484032452103/images/job6.png" alt="" class="job6-img"></li>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+var thisHeight= document.body.clientHeight;
+var index = 0;
+var startX = 0;
+var timer = null;
+var moveTimer = null;
+if(thisHeight<550){
+  $('.scroll-tab').css("margin-top","2%");
+  $('.btn-box').css("bottom","1%");
+  $('.btn-more').css("margin-bottom","1%");
+  $('.logo').css("margin-top","2%");
+  $('.offer').css("top","54%");
+  $('.arrow').css("top","62%");
+}
+$("ul").on("touchmove", function(e) {
+    e.preventDefault();
+    // moveEndX = e.originalEvent.changedTouches[0].pageX,
+    // X = moveEndX - startX;
+});
+$("ul").on("touchstart", function(e) {
+    clearTimeout(moveTimer);
+    e.preventDefault();
+    startX = e.originalEvent.changedTouches[0].pageX;
+    clearInterval(timer);
+});
+$("ul").on("touchend", function(e) {
+  e.preventDefault();
+  // clearTimeout(moveTimer);
+  moveTimer = setTimeout(function(){
+    // auto();
+    moveEndX = e.originalEvent.changedTouches[0].pageX,
+    X = moveEndX - startX || 0;
+    if(X>0){
+      index++;
+    }else if(X<0){
+      index--;
+    }else{
+      location.href = "https://m.liepin.com/register/";
+    }
+    if(index>6){
+      index = 1;
+    }
+    if(index<=0){
+      index = 6;
+    }
+    doMove();
+  },100);
+  return false;
+  if(X>5){
+      if (index>6) {
+        index=1
+      }
+      switch(index){
+        case 1: $('li').eq(0).removeClass().addClass('job0');
+                $('li').eq(1).removeClass().addClass('job1');
+                $('li').eq(2).removeClass().addClass('job2');
+                $('li').eq(3).removeClass().addClass('job3');
+                $('li').eq(4).removeClass().addClass('job4');
+                $('li').eq(5).removeClass().addClass('job5');
+                break; 
+        case 2: $('li').eq(0).removeClass().addClass('job5');
+                $('li').eq(1).removeClass().addClass('job0');
+                $('li').eq(2).removeClass().addClass('job1');
+                $('li').eq(3).removeClass().addClass('job2');
+                $('li').eq(4).removeClass().addClass('job3');
+                $('li').eq(5).removeClass().addClass('job4');
+                break;
+        case 3: $('li').eq(0).removeClass().addClass('job4');
+                $('li').eq(1).removeClass().addClass('job5');
+                $('li').eq(2).removeClass().addClass('job0');
+                $('li').eq(3).removeClass().addClass('job1');
+                $('li').eq(4).removeClass().addClass('job2');
+                $('li').eq(5).removeClass().addClass('job3');
+                break;
+        case 4: $('li').eq(0).removeClass().addClass('job3');
+                $('li').eq(1).removeClass().addClass('job4');
+                $('li').eq(2).removeClass().addClass('job5');
+                $('li').eq(3).removeClass().addClass('job0');
+                $('li').eq(4).removeClass('job2').addClass('job1');
+                $('li').eq(5).removeClass('job3').addClass('job2');
+                break;
+        case 5: $('li').eq(0).removeClass('job3').addClass('job2');
+                $('li').eq(1).removeClass('job4').addClass('job3');
+                $('li').eq(2).removeClass('job5').addClass('job4');
+                $('li').eq(3).removeClass('job0').addClass('job5');
+                $('li').eq(4).removeClass('job1').addClass('job0');
+                $('li').eq(5).removeClass('job2').addClass('job1');
+                break;
+        case 6: $('li').eq(0).removeClass('job2').addClass('job1');
+                $('li').eq(1).removeClass('job3').addClass('job2');
+                $('li').eq(2).removeClass('job4').addClass('job3  ');
+                $('li').eq(3).removeClass('job5').addClass('job4');
+                $('li').eq(4).removeClass('job0').addClass('job5');
+                $('li').eq(5).removeClass('job1').addClass('job0');
+                break;
+        }
+    }else if(X<0){
+      if (index<1) {
+        index=6
+      }
+      switch(index){
+        case 1: $('li').eq(0).removeClass('job1').addClass('job2');
+                $('li').eq(1).removeClass('job2').addClass('job3');
+                $('li').eq(2).removeClass('job3').addClass('job4');
+                $('li').eq(3).removeClass('job4').addClass('job5');
+                $('li').eq(4).removeClass('job5').addClass('job0');
+                $('li').eq(5).removeClass('job0').addClass('job1');
+                break; 
+        case 2: $('li').eq(0).removeClass('job0').addClass('job1');
+                $('li').eq(1).removeClass('job1').addClass('job2');
+                $('li').eq(2).removeClass('job2').addClass('job3');
+                $('li').eq(3).removeClass('job3').addClass('job4');
+                $('li').eq(4).removeClass('job4').addClass('job5');
+                $('li').eq(5).removeClass('job5').addClass('job0');
+                break;
+        case 3: $('li').eq(0).removeClass('job5').addClass('job0');
+                $('li').eq(1).removeClass('job0').addClass('job1');
+                $('li').eq(2).removeClass('job1').addClass('job2');
+                $('li').eq(3).removeClass('job2').addClass('job3');
+                $('li').eq(4).removeClass('job3').addClass('job4');
+                $('li').eq(5).removeClass('job4').addClass('job5');
+                break;
+        case 4: $('li').eq(0).removeClass('job4').addClass('job5');
+                $('li').eq(1).removeClass('job5').addClass('job0');
+                $('li').eq(2).removeClass('job0').addClass('job1');
+                $('li').eq(3).removeClass('job1').addClass('job2');
+                $('li').eq(4).removeClass('job2').addClass('job3');
+                $('li').eq(5).removeClass('job3').addClass('job4');
+                break;
+        case 5: $('li').eq(0).removeClass('job3').addClass('job4');
+                $('li').eq(1).removeClass('job4').addClass('job5');
+                $('li').eq(2).removeClass('job5').addClass('job0');
+                $('li').eq(3).removeClass('job0').addClass('job1');
+                $('li').eq(4).removeClass('job1').addClass('job2');
+                $('li').eq(5).removeClass('job2').addClass('job3');
+                break;
+        case 6: $('li').eq(0).removeClass('job2').addClass('job3');
+                $('li').eq(1).removeClass('job3').addClass('job4');
+                $('li').eq(2).removeClass('job4').addClass('job5');
+                $('li').eq(3).removeClass('job5').addClass('job0');
+                $('li').eq(4).removeClass('job0').addClass('job1');
+                $('li').eq(5).removeClass('job1').addClass('job2');
+                break;
+        }
+    }else if(X==0){
+      window.location.href="";
+    }else{
+      return false;
+    }
+  if(X>5){
+    index++;
+  }else if(X<0) {
+    index--;
+  }else{
+    return false;
+  }
+});
+function doMove(){
+    $('li').removeClass();
+    switch(index){
+      case 1: $('li').eq(0).addClass('job0');
+              $('li').eq(1).addClass('job1');
+              $('li').eq(2).addClass('job2');
+              $('li').eq(3).addClass('job3');
+              $('li').eq(4).addClass('job4');
+              $('li').eq(5).addClass('job5');
+              break; 
+      case 2: $('li').eq(0).addClass('job5');
+              $('li').eq(1).addClass('job0');
+              $('li').eq(2).addClass('job1');
+              $('li').eq(3).addClass('job2');
+              $('li').eq(4).addClass('job3');
+              $('li').eq(5).addClass('job4');
+              break;
+      case 3: $('li').eq(0).addClass('job4');
+              $('li').eq(1).addClass('job5');
+              $('li').eq(2).addClass('job0');
+              $('li').eq(3).addClass('job1');
+              $('li').eq(4).addClass('job2');
+              $('li').eq(5).addClass('job3');
+              break;
+      case 4: $('li').eq(0).addClass('job3');
+              $('li').eq(1).addClass('job4');
+              $('li').eq(2).addClass('job5');
+              $('li').eq(3).addClass('job0');
+              $('li').eq(4).addClass('job1');
+              $('li').eq(5).addClass('job2');
+              break;
+      case 5: $('li').eq(0).addClass('job2');
+              $('li').eq(1).addClass('job3');
+              $('li').eq(2).addClass('job4');
+              $('li').eq(3).addClass('job5');
+              $('li').eq(4).addClass('job0');
+              $('li').eq(5).addClass('job1');
+              break;
+      case 6: $('li').eq(0).addClass('job1');
+              $('li').eq(1).addClass('job2');
+              $('li').eq(2).addClass('job3');
+              $('li').eq(3).addClass('job4');
+              $('li').eq(4).addClass('job5');
+              $('li').eq(5).addClass('job0');
+              break;
+      }
+  
+}
+
+timer = setInterval(function(){
+  auto();
+}, 1500);
+function auto(){
+  index++;
+  if (index>6) {
+        index=1
+      }
+  doMove();
+};
+
+
+</script>
+</html>
